@@ -14,8 +14,8 @@
     "pdf-lib": "^1.17.1"
   },
   "scripts": {
-    "start": "serve -s build",  
-    "build": "react-scripts build" 
+    "start": "serve -s build",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
   }
 }
