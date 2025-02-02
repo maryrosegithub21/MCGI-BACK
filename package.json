@@ -1,6 +1,8 @@
 {
   "name": "mcgi-back",
   "version": "0.1.0",
+  "description": "my backend",
+  "main": "server.js",
   "private": true,
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
@@ -15,8 +17,8 @@
     "typescript": "4.9.5"
   },
   "scripts": {
-    "start": "serve -s build",
-    "build": "react-scripts build"
+     "start": "node server.js"
+    
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +40,10 @@
   },
   "devDependencies": {
     "react-scripts": "^5.0.1"
-  }
+  },
+  "description": "This is a fully responsive web application for Members Church Of God International, leveraging React.js for the front-end and Node.js for the back end. Robust authentication and authorization were implemented using OAuth. The application features a user-friendly interface designed to facilitate key functions such as membership management, event registration, and online giving. For content management and database storage, I integrate Google Suite (Docs, Sheets). CORS was utilized to handle cross-origin requests, ensuring secure communication between the front end and back end",
+  "main": "googleSheetsUtils.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
