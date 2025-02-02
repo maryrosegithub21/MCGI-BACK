@@ -10,5 +10,5 @@ options:
   machineType: 'E2_HIGHCPU_8' # Optional: For faster builds
 
 # Service account configuration
-serviceAccount: '751732416354-compute@developer.gserviceaccount.com' # Replace with your service account email
+serviceAccount: 'mcgifeastlogin@mcgifeastprinting.iam.gserviceaccount.com' # Replace with your service account email
 
