@@ -3,6 +3,8 @@
 
 This project is a React application that interacts with Google Sheets to display and manage data. It allows users to search, view, and generate PDFs from the data retrieved from a Google Sheet. The application also requires a valid Church ID for access.
 
+# Cache refresh
+
 ## Features
 
 - Fetch and display data from Google Sheets.
