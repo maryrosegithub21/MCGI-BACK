@@ -1,25 +1,20 @@
 steps:
-  - name: 'node:20.18.2'
-    entrypoint: 'npm'
-    args: ['install']
-
-  # Deploy to Cloud Run directly from source
   - name: 'gcr.io/google.com/cloudsdk/gcloud'
     args:
       - 'run'
       - 'deploy'
-      - 'mcgi-back'
+      - 'mcgi-back'  # Your service name
       - '--source'
-      - '.'
+      - '.'         # Deploy from the current directory
       - '--region'
       - 'us-central1'
       - '--platform'
       - 'managed'
-      - '--ingress=all'
+      - '--ingress=all' # Or '--ingress=internal' as needed
       - '--port=8080'
-      - '--allow-unauthenticated' # Add if needed
+      - '--allow-unauthenticated' # If you need unauthenticated access
 
 options:
   machineType: 'E2_HIGHCPU_8'
 
-serviceAccount: '751732416354-compute@developer.gserviceaccount.com'
+serviceAccount: '751732416354-compute@developer.gserviceaccount.com' # Replace if necessary
