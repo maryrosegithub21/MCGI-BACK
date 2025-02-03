@@ -118,6 +118,7 @@ const generationConfig = {
 
 // Gemini Chatbot Endpoint
 app.post('/api/gemini-chat', async (req, res) => {
+  console.log("Received request to /api/gemini-chat");
   let message = req.body.message;
   console.log("Message type before conversion:", typeof message);
   console.log("Message before conversion:", message);
