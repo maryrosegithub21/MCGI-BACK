@@ -3,27 +3,21 @@ steps:
     entrypoint: 'npm'
     args: ['install']
 
-  # Build the container image
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/mcgi-back:$COMMIT_SHA', '.']
-
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/mcgi-back:$COMMIT_SHA']
-
-  # Deploy to Cloud Run
+  # Deploy to Cloud Run directly from source
   - name: 'gcr.io/google.com/cloudsdk/gcloud'
     args:
       - 'run'
       - 'deploy'
       - 'mcgi-back'
-      - '--image'
-      - 'gcr.io/$PROJECT_ID/mcgi-back:$COMMIT_SHA'
+      - '--source'
+      - '.'
       - '--region'
-      - 'us-central1' # Or your preferred region
+      - 'us-central1'
       - '--platform'
       - 'managed'
-      - '--ingress=all'  # Or '--ingress=internal' etc. as needed
-      - '--port=8080' # Set the port directly in the gcloud command
+      - '--ingress=all'
+      - '--port=8080'
+      - '--allow-unauthenticated' # Add if needed
 
 options:
   machineType: 'E2_HIGHCPU_8'
